@@ -66,6 +66,12 @@ void printLL(Node* head) {
     }
 }
 
+Node* insertHead(Node* head, int num) {
+    Node* newNode = createNode(num);
+    newNode->next = head;
+    return newNode;
+}
+
 int main(void) {
     Node* head = createNode(1);
     Node* node2 = createNode(2);
@@ -96,11 +102,12 @@ int main(void) {
     printLL(head);
 
     int num;
-    printf("nhap gia tri muon chen");
+    printf("nhap gia tri muon them vao dau mang");
     scanf("%d", &num);
 
-    insertByIndex(head, num);
+    // insertByIndex(head, num);
 
+    head = insertHead(head, num);
     printLL(head);
 
 
